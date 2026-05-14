@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スプラ3 ブキルーレット</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ローディング画面 -->
+  <div class="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="container">
+    <div class="panel">
+      <div class="panel-title">ブキルーレット</div>
+
+      <div class="content">
+
+        <!-- ギアランダムON/OFF -->
+        <div class="toggle-row">
+          <span class="toggle-label">ギアランダム</span>
+          <label class="switch">
+            <input type="checkbox" id="gearToggle">
+            <span class="slider"></span>
+          </label>
+        </div><!-- toggle-row END -->
+
+        <hr>
+
+        <!-- 絞り込みON/OFF -->
+        <div class="filter-header">
+          <div class="toggle-label">ブキ絞り込み</div>
+          <label class="switch">
+            <input type="checkbox" id="filterToggle">
+            <span class="slider"></span>
+          </label>
+        </div><!-- filter-header END -->
+
+        <!-- 絞り込みエリア -->
+        <div id="filterArea" style="display: none;">
+          <!-- タブ生成先 -->
+          <div id="tabs"></div>
+          <!-- タブ中身生成先 -->
+          <div id="tabContents"></div>
+        </div><!-- filterArea END -->
+
+        <!-- 抽選ボタン -->
+        <button class="roll" onclick="rollCurrent()">抽選する</button>
+
+        <!-- 結果表示 -->
+        <div id="result" class="result">
+
+          <!-- ブキ表示 -->
+          <div id="weaponArea">
+            <div class="weapon" id="weaponName"></div>
+            <div class="sub" id="subName"></div>
+            <div class="special" id="specialName"></div>
+          </div><!-- weaponArea END -->
+
+          <!-- ギア表示 -->
+          <div id="gearArea" style="display: none;">
+            <hr>
+
+            <div class="gear-row">
+              <span class="gear-label">アタマ：</span>
+              <div class="gear-head" id="gearHead"></div>
+            </div><!-- gear-row END -->
+
+            <div class="gear-row">
+              <span class="gear-label">フク：</span>
+              <div class="gear-clothing" id="gearClothing"></div>
+            </div><!-- gear-row END -->
+
+            <div class="gear-row">
+              <span class="gear-label">クツ：</span>
+              <div class="gear-shoes" id="gearShoes"></div>
+            </div><!-- gear-row END -->
+          </div><!-- gearArea END -->
+
+        </div><!-- result END -->
+
+      </div><!-- content END -->
+
+    </div><!-- panel END -->
+  </div><!-- container END -->
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
